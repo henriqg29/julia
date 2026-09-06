@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Para você ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         TELA INICIAL
+    ========================== -->
+
+    <section id="tela-inicial" class="tela-inicial">
+
+        <div class="carta">
+
+            <p class="pequeno">
+                Jamais iria deixar o Meu Bem sem um presente, né? ❤️
+            </p>
+
+            <h1>
+                Para você ❤️
+            </h1>
+
+            <p class="descricao">
+                Trouxe para você um pedacinho de nós, com algumas memórias que eu amo guardar.
+            </p>
+
+            <button onclick="abrirPresente()">
+                abrir ♡
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTEÚDO PRINCIPAL
+    ========================== -->
+
+    <main id="conteudo" class="conteudo">
+
+        <h1>
+            Um pedacinho de nós ❤️
+        </h1>
+
+        <p class="subtitulo">
+            Algumas memórias que eu amo guardar.
+        </p>
+
+
+        <!-- =========================
+             CARROSSEL
+        ========================== -->
+
+        <section class="carrossel">
+
+            <button class="botao-anterior" onclick="voltarFoto()">
+                ‹
+            </button>
+
+
+            <div class="foto-container">
+
+                <img id="foto" src="imagens/foto1.jpeg" alt="Nossa foto">
+
+                <p id="contador">
+                    01 / 10
+                </p>
+
+            </div>
+
+
+            <button class="botao-proximo" onclick="proximaFoto()">
+                ›
+            </button>
+
+        </section>
+
+
+        <!-- =========================
+             RECADO
+        ========================== -->
+
+        <p id="recado" class="recado">
+            Seu primeiro recadinho aqui ❤️
+        </p>
+
+        <!-- BOTÃO DA MÚSICA -->
+
+        <a href="https://open.spotify.com/intl-pt/track/5jgEw0GyMw6kkZJxcLkM9t?si=c2cc6bc688344b8f" target="_blank"
+            class="botao-musica">
+            ♫
+        </a>
+
+    </main>
+
+    <!-- =========================
+     TELA FINAL
+========================= -->
+
+    <section id="tela-final" class="tela-final">
+
+        <div class="final-container">
+
+            <span class="coracao-final">❤️</span>
+
+            <h1>
+                E isso é só um pouquinho da nossa história que está apenas começando, meu amor.
+            </h1>
+
+            <p>
+                Obrigado por me fazer mais feliz a cada dia que passa, sendo essa mulher simplesmente incrível que sou
+                grato de ter ao meu lado, a melhor companheira que eu poderia ter, e a pessoa que me faz sentir o homem
+                mais sortudo do mundo. ❤️
+            </p>
+
+            <p>
+                Saiba que essa pessoinha aqui, te ama, daqui até o infinito e mais um pouco kkkkk, a minha maior
+                felicidade é poder desfrutar de cada momento com você e a minha maior sorte é poder ser seu namorado!
+            </p>
+
+            <button onclick="mostrarMensagemFinal()">
+                ♡ eu te amo ♡
+            </button>
+
+            <p id="mensagem-final" class="mensagem-final">
+                Um feliz nós, amor da minha vida ❤️
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>

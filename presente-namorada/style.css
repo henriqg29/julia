@@ -1,0 +1,761 @@
+/* =========================
+   CONFIGURAÇÕES GERAIS
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #f8f1ed;
+
+    font-family: Arial, sans-serif;
+
+    color: #4a2929;
+}
+
+
+/* =========================
+   TELA INICIAL
+========================= */
+
+.tela-inicial {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f8f1ed;
+
+    z-index: 10;
+
+    opacity: 1;
+
+    transition: opacity 0.8s ease;
+}
+
+.tela-inicial.fechando {
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+/* =========================
+   CARTA DA TELA INICIAL
+========================= */
+
+.carta {
+    text-align: center;
+
+    padding: 40px 30px;
+
+    max-width: 500px;
+}
+
+
+.pequeno {
+    font-size: 15px;
+
+    color: #795858;
+
+    margin-bottom: 15px;
+}
+
+
+.carta h1 {
+    font-family: Georgia, serif;
+
+    font-size: 42px;
+
+    color: #633d3d;
+
+    margin-bottom: 15px;
+}
+
+
+.descricao {
+    font-family: Georgia, serif;
+
+    font-size: 18px;
+
+    color: #795858;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   BOTÃO DA TELA INICIAL
+========================= */
+
+.carta button {
+    border: 1px solid #d8b8b8;
+
+    background: #fff8f6;
+
+    color: #6d3f3f;
+
+    padding: 12px 28px;
+
+    border-radius: 30px;
+
+    font-family: Georgia, serif;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+
+.carta button:hover {
+    background: #6d3f3f;
+
+    color: white;
+
+    transform: scale(1.05);
+
+    box-shadow:
+        0 6px 16px rgba(80, 40, 40, 0.15);
+}
+
+
+.carta button:active {
+    transform: scale(0.97);
+}
+
+
+/* =========================
+   CONTEÚDO PRINCIPAL
+========================= */
+
+.conteudo {
+    display: none;
+
+    width: 90%;
+    max-width: 700px;
+
+    text-align: center;
+
+    padding: 30px 20px;
+}
+
+.conteudo.aparecer {
+    display: block;
+
+    animation: entrarCarrossel 1s ease;
+}
+
+@keyframes entrarCarrossel {
+
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================
+   TÍTULO
+========================= */
+
+.conteudo h1 {
+    font-family: Georgia, serif;
+
+    font-size: 36px;
+
+    margin-bottom: 10px;
+}
+
+
+.subtitulo {
+    font-size: 16px;
+
+    margin-bottom: 30px;
+
+    color: #795858;
+}
+
+
+/* =========================
+   CARROSSEL
+========================= */
+
+.carrossel {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+}
+
+
+/* =========================
+   CONTAINER DA FOTO
+========================= */
+
+.foto-container {
+    width: 500px;
+
+    background: white;
+
+    padding: 15px 15px 35px;
+
+    border-radius: 4px;
+
+    position: relative;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================
+   FOTO
+========================= */
+
+.foto-container img {
+    width: 100%;
+
+    height: 500px;
+
+    display: block;
+
+    object-fit: contain;
+
+    border-radius: 2px;
+
+    background-color: #f5eeee;
+
+    touch-action:pan-y;
+    user-select:none;
+}
+
+
+/* =========================
+   CONTADOR
+========================= */
+
+#contador {
+    position: absolute;
+
+    bottom: 10px;
+
+    left: 0;
+
+    right: 0;
+
+    font-size: 13px;
+
+    color: #795858;
+}
+
+
+/* =========================
+   BOTÕES DO CARROSSEL
+========================= */
+
+.botao-anterior,
+.botao-proximo {
+    width: 45px;
+
+    height: 45px;
+
+    min-width: 45px;
+
+    border: 1px solid #d8b8b8;
+
+    border-radius: 50%;
+
+    background: #fff8f6;
+
+    color: #6d3f3f;
+
+    font-size: 32px;
+
+    font-family: Georgia, serif;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 0;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    flex-shrink: 0;
+
+    box-shadow:
+        0 4px 12px rgba(80, 40, 40, 0.12);
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.botao-anterior:hover,
+.botao-proximo:hover {
+    background: #6d3f3f;
+
+    color: white;
+
+    transform: scale(1.1);
+
+    box-shadow:
+        0 6px 16px rgba(80, 40, 40, 0.2);
+}
+
+
+.botao-anterior:active,
+.botao-proximo:active {
+    transform: scale(0.95);
+}
+
+
+/* =========================
+   ANIMAÇÃO DA FOTO
+========================= */
+
+#foto.trocando {
+    animation: trocarFoto 0.5s ease;
+}
+
+
+@keyframes trocarFoto {
+
+    0% {
+        opacity: 0;
+
+        transform: scale(0.96);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform: scale(1);
+    }
+}
+
+
+/* =========================
+   RECADO
+========================= */
+
+.recado {
+    margin-top: 30px;
+
+    min-height: 30px;
+
+    font-family: Georgia, serif;
+
+    font-size: 20px;
+
+    font-style: italic;
+
+    color: #633d3d;
+}
+
+
+/* =========================
+   TRANSIÇÃO PARA O CARROSSEL
+========================= */
+
+.conteudo {
+    display: none;
+    width: 90%;
+    max-width: 700px;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.conteudo.aparecer {
+    display: block;
+    animation: entrarCarrossel 1s ease;
+}
+
+
+@keyframes entrarCarrossel {
+
+    0% {
+        opacity: 0;
+        transform: translateY(40px) scale(0.97);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+
+/* =========================
+   SAÍDA DA TELA INICIAL
+========================= */
+
+.tela-inicial {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f8f1ed;
+
+    z-index: 10;
+
+    opacity: 1;
+
+    transition: opacity 0.8s ease;
+}
+
+
+.tela-inicial.fechando {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 600px) {
+
+    .conteudo {
+        width: 100%;
+
+        padding: 20px 10px;
+    }
+
+
+    .conteudo h1 {
+        font-size: 28px;
+    }
+
+
+    .subtitulo {
+        font-size: 15px;
+
+        margin-bottom: 25px;
+    }
+
+
+    .carrossel {
+        gap: 8px;
+    }
+
+
+    .foto-container {
+        width: 75vw;
+
+        padding: 10px 10px 30px;
+    }
+
+
+    .foto-container img {
+        height: 75vw;
+    }
+
+
+    .botao-anterior,
+    .botao-proximo {
+        width: 42px;
+
+        height: 42px;
+
+        min-width: 42px;
+
+        font-size: 28px;
+    }
+
+
+    .recado {
+        margin-top: 25px;
+
+        font-size: 18px;
+    }
+
+
+    .carta {
+        padding: 30px 20px;
+    }
+
+
+    .carta h1 {
+        font-size: 34px;
+    }
+
+
+    .descricao {
+        font-size: 17px;
+    }
+
+}
+
+/* =========================
+   BOTÃO DA MÚSICA
+========================= */
+
+.botao-musica {
+    position: fixed;
+
+    bottom: 25px;
+    right: 25px;
+
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #fff8f6;
+
+    color: #6d3f3f;
+
+    border: 1px solid #d8b8b8;
+
+    text-decoration: none;
+
+    font-size: 28px;
+
+    box-shadow:
+        0 4px 15px rgba(80, 40, 40, 0.15);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+
+.botao-musica:hover {
+    transform: scale(1.1) rotate(10deg);
+
+    background: #6d3f3f;
+
+    color: white;
+}
+
+/* =========================
+   TELA FINAL
+========================= */
+
+.tela-final {
+    display: none;
+
+    width: 90%;
+    max-width: 650px;
+
+    text-align: center;
+
+    padding: 40px 20px;
+}
+
+
+.tela-final.aparecer-final {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+
+    animation: aparecerFinal 1s ease;
+}
+
+
+.final-container {
+    max-width: 550px;
+}
+
+
+.coracao-final {
+    display: block;
+
+    font-size: 55px;
+
+    margin-bottom: 20px;
+
+    animation: coracaoPulsar 1.5s infinite ease-in-out;
+}
+
+
+.final-container h1 {
+    font-family: Georgia, serif;
+
+    font-size: 36px;
+
+    color: #633d3d;
+
+    margin-bottom: 25px;
+}
+
+
+.final-container p {
+    font-family: Georgia, serif;
+
+    font-size: 19px;
+
+    line-height: 1.7;
+
+    color: #795858;
+
+    margin-bottom: 20px;
+}
+
+
+.final-container button {
+    margin-top: 15px;
+
+    padding: 13px 28px;
+
+    border-radius: 30px;
+
+    border: 1px solid #d8b8b8;
+
+    background: #fff8f6;
+
+    color: #6d3f3f;
+
+    font-family: Georgia, serif;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+
+.final-container button:hover {
+    background: #6d3f3f;
+
+    color: white;
+
+    transform: scale(1.05);
+}
+
+
+/* MENSAGEM ESCONDIDA */
+
+.mensagem-final {
+    display: none;
+
+    margin-top: 30px;
+
+    font-style: italic;
+
+    animation: aparecerMensagem 0.8s ease;
+}
+
+
+.mensagem-final.mostrar {
+    display: block;
+}
+
+
+/* =========================
+   ANIMAÇÕES
+========================= */
+
+@keyframes aparecerFinal {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(40px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+
+@keyframes aparecerMensagem {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+
+@keyframes coracaoPulsar {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+}
+
+
+/* =========================
+   CELULAR - TELA FINAL
+========================= */
+
+@media (max-width: 600px) {
+
+    .final-container h1 {
+        font-size: 29px;
+    }
+
+    .final-container p {
+        font-size: 17px;
+    }
+
+    .coracao-final {
+        font-size: 45px;
+    }
+
+}
